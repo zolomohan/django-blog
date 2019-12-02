@@ -3,8 +3,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # upload_to -> directory to which the photos are uploded
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):
